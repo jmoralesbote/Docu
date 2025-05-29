@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UsuariosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+ */
+Route::get('/', function () {
+    // Si está autenticado, lo mandas a la vista 'inicio'
+    if (Auth::check()) {
+        return view('inicio'); // Tu dashboard personalizado
+    }
+    // Si NO está autenticado, lo mandas al login
+    return redirect()->route('login');
+})->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,3 +37,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+Route::get('/indexAltaUsuarios', [UsuariosController::class, 'indexAltaUsuarios'])->name('indexAltaUsuarios');
+Route::post('/AltaUsuarios', [UsuariosController::class, 'AltaUsuarios'])->name('AltaUsuarios');
+
+Route::get('/indexListarUsuarios', [UsuariosController::class, 'indexListarUsuarios'])->name('indexListarUsuarios');
