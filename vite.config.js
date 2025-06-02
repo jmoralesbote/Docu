@@ -9,6 +9,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/Usuarios/altaUsuarios.js',
                 'resources/css/usuarios/usuarios.css',
+                'resources/js/Usuarios/editarUsuario.js',
+                'resources/js/Usuarios/listarUsuarios.js',
             ],
             refresh: true,
         }),

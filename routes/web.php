@@ -41,5 +41,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/indexAltaUsuarios', [UsuariosController::class, 'indexAltaUsuarios'])->name('indexAltaUsuarios');
 Route::post('/AltaUsuarios', [UsuariosController::class, 'AltaUsuarios'])->name('AltaUsuarios');
+Route::get('/indexEditarUsuarios/{idusuario}', [UsuariosController::class, 'indexEditarUsuarios'])->name('indexEditarUsuarios');
+Route::post('/EditarUsuarios', [UsuariosController::class, 'EditarUsuarios'])->name('EditarUsuarios');
 
 Route::get('/indexListarUsuarios', [UsuariosController::class, 'indexListarUsuarios'])->name('indexListarUsuarios');

@@ -5,17 +5,17 @@
         <h3 class="text-lg font-semibold mb-2">Información Personal</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-                <label class="block text-sm mb-2">Nombre</label>
-                <input type="text" name="user_nombre" class="w-full rounded p-2 text-black" required>
+                <label class="block text-sm mb-2" for="user_nombre">Nombre</label>
+                <input type="text" name="user_nombre" id="user_nombre" class="w-full rounded p-2 text-black" required>
             </div>
             <div>
-                <label class="block text-sm mb-2">Apellido Paterno</label>
-                <input type="text" name="user_paterno" class="w-full rounded p-2 text-black" required>
+                <label class="block text-sm mb-2" for="user_paterno">Apellido Paterno</label>
+                <input type="text" name="user_paterno" id="user_paterno" class="w-full rounded p-2 text-black" required>
 
             </div>
             <div>
-                <label class="block text-sm mb-2">Apellido Materno</label>
-                <input type="text" name="user_materno" class="w-full rounded p-2 text-black">
+                <label class="block text-sm mb-2" for="user_materno">Apellido Materno</label>
+                <input type="text" name="user_materno" id="user_materno" class="w-full rounded p-2 text-black">
             </div>
         </div>
     </div>
@@ -24,16 +24,16 @@
         <h3 class="text-lg font-semibold mb-2">Credenciales</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-                <label class="block text-sm mb-2">Nombre de Usuario</label>
-                <input type="text" name="username" class="w-full rounded p-2 text-black" required>
+                <label class="block text-sm mb-2" for="username">Nombre de Usuario</label>
+                <input type="text" name="username" id="username" class="w-full rounded p-2 text-black" required>
             </div>
             <div>
-                <label class="block text-sm mb-2">Correo Electrónico</label>
-                <input type="email" name="email" class="w-full rounded p-2 text-black" required>
+                <label class="block text-sm mb-2" for="email">Correo Electrónico</label>
+                <input type="email" name="email" id="email" class="w-full rounded p-2 text-black" required>
             </div>
             <div>
-                <label class="block text-sm mb-2">Contraseña</label>
-                <input type="password" name="password" class="w-full rounded p-2 text-black" required>
+                <label class="block text-sm mb-2" for="password">Contraseña</label>
+                <input type="password" name="password" id="password" class="w-full rounded p-2 text-black" required>
             </div>
         </div>
     </div>

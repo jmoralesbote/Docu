@@ -58,6 +58,40 @@ class UsuariosController extends Controller
         }
     }
 
+    public function indexEditarUsuarios($idusuario){
+        $usuarios = User::findOrFail($idusuario);
+        /* dd($usuarios); */
+        return view('Usuarios.indexEditarUsuarios')->with(compact('usuarios'));
+    }
+
+    public function EditarUsuarios(Request $data){
+        try{
+            $idusuario = $data->input('idusuario');
+            $usuario = User::findOrFail($idusuario);
+    
+            $usuario->username = $data->input('username');
+            $usuario->user_nombre = $data->input('user_nombre');
+            $usuario->user_paterno = $data->input('user_paterno');
+            $usuario->user_materno = $data->input('user_materno');
+            $usuario->email = $data->input('email');
+            if ($data->filled('password')) {
+                $usuario->password = Hash::make($data->password);
+            }
+
+            $usuario->save();
+        
+            return response()->json(['message' => 'Usuario actualizado exitosamente.'], 200);
+
+        }catch (QueryException $e) {
+            // Manejo de errores de la base de datos
+            return response()->json([
+                'status' => 'error',
+            'message' => 'Ocurrió un error inesperado al guardar los datos.',
+            ], 500);
+
+        }
+    }
+
     public function indexListarUsuarios(){
         
         return view('Usuarios.indexListarUsuarios');
