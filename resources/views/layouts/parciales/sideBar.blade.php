@@ -32,19 +32,27 @@
                 </ul>
             </li>
 
-            {{-- <li>
-                <a href="{{ route('documentos.index') }}"
-                   class="block px-4 py-2 rounded hover:bg-purple-600 {{ request()->is('documentos*') ? 'bg-purple-600' : '' }}">
-                    📁 Documentos
+            <li class="has-submenu">
+                <a href="#" onclick="toggleSubMenu(event)"
+                   class="flex justify-between items-center px-4 py-2 rounded hover:bg-purple-600 {{ Request::is('documentos*') || Request::is('indexDocumentos*') ? 'bg-purple-600' : '' }}">
+                    📄 Documentos
+                    <i class="fas fa-chevron-down text-sm transition-transform"></i>
                 </a>
+                <ul class="submenu ml-4 mt-1 hidden space-y-1">
+                    <li>
+                        <a href="{{ route('indexListarDocumentos') }}"
+                           class="block px-3 py-1 rounded hover:bg-purple-600 {{ Request::is('indexListarDocumentos*') ? 'bg-purple-600' : '' }}">
+                            📋 Listar Documentos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('indexAltaDocumentos') }}"
+                           class="block px-3 py-1 rounded hover:bg-purple-600 {{ Request::is('indexAltaDocumentos*') ? 'bg-purple-600' : '' }}">
+                            ➕ Alta Documentos
+                        </a>
+                    </li>
+                </ul>
             </li>
-
-            <li>
-                <a href="{{ route('configuracion.index') }}"
-                   class="block px-4 py-2 rounded hover:bg-purple-600 {{ request()->is('configuracion*') ? 'bg-purple-600' : '' }}">
-                    ⚙️ Configuración
-                </a>
-            </li> --}}
 
         </ul>
     </nav>

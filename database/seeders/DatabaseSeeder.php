@@ -19,5 +19,11 @@ class DatabaseSeeder extends Seeder
              'email' => 'test@example.com',
              'password' => '123456789',
          ]); */
+
+         $this->call([
+            TiposDocSeeder::class,
+            UsuariosSeeder::class,
+            // Puedes agregar más seeders aquí
+         ]);
     }
 }

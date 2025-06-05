@@ -66,7 +66,6 @@ class UserTable extends DataTableComponent
 
     public function eliminarUsuarioHandler($id)
     {
-        \Log::info('Entró a eliminarUsuarioHandler', ['id' => $id]);
         $usuario = User::find($id);
         if ($usuario) {
             $usuario->user_status = 'BAJA';

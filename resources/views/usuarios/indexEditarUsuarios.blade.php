@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('styles')
-    @vite('resources/css/usuarios/usuarios.css')
+    @vite('resources/css/usuarios/sk.css')
 @endsection
 
 @section('content')

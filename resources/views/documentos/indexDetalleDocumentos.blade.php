@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-    @include('usuarios.parciales.bodyAltaUsuarios')
+    @include('documentos.parciales.bodyDetalleDocumentos')
 @endsection
 
 @section('scripts')
-        @vite('resources/js/Usuarios/altaUsuarios.js')
+        {{-- @vite('resources/js/documentos/altaDocumentos.js') --}}
         <script src="{{ asset('/plugins/sweetalert.11.22/sweetalert2.all.min.js') }}"></script>
 @endsection
