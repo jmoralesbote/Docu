@@ -1,12 +1,14 @@
 @extends('layouts.template')
 
-@section('title', 'Listado de Usuarios')
+@section('styles')
+    @vite('resources/css/usuarios/sk.css')
+@endsection
 
 @section('content')
-    @include('usuarios.parciales.bodyListarUsuarios')
+    @include('documentos.parciales.bodyAltaDocumentos')
 @endsection
 
 @section('scripts')
-        @vite('resources/js/Usuarios/listarUsuarios.js')
+        @vite('resources/js/documentos/altaDocumentos.js')
         <script src="{{ asset('/plugins/sweetalert.11.22/sweetalert2.all.min.js') }}"></script>
 @endsection

@@ -1,12 +1,12 @@
 @extends('layouts.template')
 
-@section('title', 'Listado de Usuarios')
+@section('title', 'Listado de Documentos')
 
 @section('content')
-    @include('usuarios.parciales.bodyListarUsuarios')
+    @include('documentos.parciales.bodyListarDocumentos')
 @endsection
 
 @section('scripts')
-        @vite('resources/js/Usuarios/listarUsuarios.js')
+        @vite('resources/js/documentos/listarDocumentos.js')
         <script src="{{ asset('/plugins/sweetalert.11.22/sweetalert2.all.min.js') }}"></script>
 @endsection
