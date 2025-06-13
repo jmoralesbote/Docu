@@ -7,8 +7,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
                 <label class="block text-sm mb-2" for="archivo_respuesta">Archivo a entregar</label>
+                <button type="button"
+                    id="btn-file"
+                    class="cursor-pointer bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded shadow transition-all duration-300 ease-in-out flex items-center gap-2">
+                    <i class="fas fa-upload"></i> Seleccionar archivo
+                </button>
                 <input type="file" name="archivo_respuesta" id="archivo_respuesta"
-                    class="w-full rounded p-2 text-black bg-gray-200" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png"
+                    class="hidden"
+                    accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png"
                     required>
                 <div class="text-xs text-gray-400 mt-1" id="nombre-archivo">Ningún archivo seleccionado</div>
             </div>
@@ -49,7 +55,11 @@
     document.addEventListener('DOMContentLoaded', () => {
         const inputArchivo = document.getElementById('archivo_respuesta');
         const nombreArchivo = document.getElementById('nombre-archivo');
-        if (inputArchivo && nombreArchivo) {
+        const btnFile = document.getElementById('btn-file');
+        if (inputArchivo && nombreArchivo && btnFile) {
+            btnFile.addEventListener('click', () => {
+                inputArchivo.click();
+            });
             inputArchivo.addEventListener('change', function() {
                 nombreArchivo.textContent = inputArchivo.files.length > 0 ?
                     inputArchivo.files[0].name :
