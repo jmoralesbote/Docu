@@ -23,12 +23,12 @@
     @include('layouts.parciales.sidebar')
 
     {{-- Contenido principal --}}
-    <div class="flex-1 flex flex-col">
+    <div class="flex-1 flex flex-col min-w-0">
         {{-- Navbar --}}
         @include('layouts.parciales.navbar')
 
         {{-- Contenido dinámico --}}
-        <main class="flex-1 p-6">
+        <main class="flex-1 p-6 min-w-0">
             @yield('content')
         </main>
 

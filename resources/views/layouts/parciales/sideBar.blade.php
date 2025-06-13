@@ -4,7 +4,7 @@
         <ul class="space-y-2 text-gray-100">
 
             <li>
-                <a href="#"
+                <a href="{{ route('home') }}"
                    class="block px-4 py-2 rounded hover:bg-purple-600 {{ request()->is('dashboard') ? 'bg-purple-600' : '' }}">
                     🏠 Dashboard
                 </a>
@@ -54,6 +54,46 @@
                 </ul>
             </li>
 
+            <li class="has-submenu">
+                <a href="#" onclick="toggleSubMenu(event)"
+                   class="flex justify-between items-center px-4 py-2 rounded hover:bg-purple-600 {{ Request::is('indexAltaSolicitud*') || Request::is('indexListarSolicitud*') ? 'bg-purple-600' : '' }}">
+                    📝 Solicitudes
+                    <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </a>
+                <ul class="submenu ml-4 mt-1 hidden space-y-1">
+                    <li>
+                        <a href="{{ route('indexListarSolicitud') }}"
+                           class="block px-3 py-1 rounded hover:bg-purple-600 {{ Request::is('indexListarSolicitud*') ? 'bg-purple-600' : '' }}">
+                            📋 Listar Solicitudes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('indexAltaSolicitud') }}"
+                           class="block px-3 py-1 rounded hover:bg-purple-600 {{ Request::is('indexAltaSolicitud*') ? 'bg-purple-600' : '' }}">
+                            ➕ Alta Solicitud
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <a href="#" onclick="toggleSubMenu(event)"
+                   class="flex justify-between items-center px-4 py-2 rounded hover:bg-purple-600 {{ Request::is('indexListarEntrega*') ? 'bg-purple-600' : '' }}">
+                    📦 Entregas
+                    <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </a>
+                <ul class="submenu ml-4 mt-1 hidden space-y-1">
+                    <li>
+                        <a href="{{ route('indexListarEntrega') }}"
+                           class="block px-3 py-1 rounded hover:bg-purple-600 {{ Request::is('indexListarEntrega*') ? 'bg-purple-600' : '' }}">
+                            📋 Listar Entregas
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            
+            
         </ul>
     </nav>
 </aside>

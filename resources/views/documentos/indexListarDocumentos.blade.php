@@ -1,6 +1,8 @@
 @extends('layouts.template')
 
-@section('title', 'Listado de Documentos')
+@section('styles')
+    @vite('resources/css/sk/sk.css')
+@endsection
 
 @section('content')
     @include('documentos.parciales.bodyListarDocumentos')

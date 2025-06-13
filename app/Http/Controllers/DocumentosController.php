@@ -83,8 +83,8 @@ class DocumentosController extends Controller
 
         $documento->save();
 
-        return response()->json(['status' => 'success', 'message' => 'Documento actualizado exitosamente.']);
-    } catch (\Exception $e) {
+        return response()->json(['status' => 'success', 'message' => 'Documento actualizado exitosamente.'], 200);
+    } catch (QueryException $e) {
         return response()->json([
             'status' => 'error',
             'message' => 'Ocurrió un error inesperado al actualizar el documento.',

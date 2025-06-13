@@ -7,6 +7,10 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Documentos;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 class DocumentosTable extends DataTableComponent
 {
@@ -39,24 +43,28 @@ class DocumentosTable extends DataTableComponent
             Column::make("Tipo de Documento", "tipo")
                 ->sortable()
                 ->searchable(),
-            Column::make("Fecha de subida", "fecha_documento"),
+            Column::make("Fecha de subida", "fecha_documento")
+                ->format(fn($value) => Carbon::parse($value)->format('d/m/Y'))
+                ->collapseOnTablet(),
             Column::make("Ruta", "archivo")
             ->hideIf(true),
             Column::make("Estado", "estado"),
             Column::make("Usuario que subió", "user_id")
                 ->format(fn($value, $column, $row) => $column->nombre_usuario)
-                ->sortable()
-                ->searchable(),
+                ->collapseOnTablet(),
             Column::make("Created at", "created_at")
                 ->hideIf(true),
             Column::make("Updated at", "updated_at")
                 ->hideIf(true),
             Column::make("Ver/Descargar")
-                ->label(fn($row, Column $column) => view('livewire.documentos.documentos-list-vd')->with('documento', $row)),
+                ->label(fn($row, Column $column) => view('livewire.documentos.documentos-list-vd')->with('documento', $row))
+                ->collapseOnTablet(),
             Column::make("Detalles")
-                ->label(fn($row, Column $column) => view('livewire.documentos.documentos-list-detalles')->with('documento', $row)),
+                ->label(fn($row, Column $column) => view('livewire.documentos.documentos-list-detalles')->with('documento', $row))
+                ->collapseOnTablet(),
             Column::make("Acciones")
-                ->label(fn($row, Column $column) => view('livewire.documentos.documentos-list-acciones')->with('documento', $row)),
+                ->label(fn($row, Column $column) => view('livewire.documentos.documentos-list-acciones')->with('documento', $row))
+                ->collapseOnTablet(),
             
             
         ];
