@@ -9,6 +9,6 @@
 @endsection
 
 @section('scripts')
-    @vite('resources/js/SolicitudOC/altaEntrega.js')
+    @vite('resources/js/solicitudoc/altaEntrega.js')
     <script src="{{ asset('/plugins/sweetalert.11.22/sweetalert2.all.min.js') }}"></script>
 @endsection
