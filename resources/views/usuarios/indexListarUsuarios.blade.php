@@ -1,6 +1,8 @@
 @extends('layouts.template')
 
-@section('title', 'Listado de Usuarios')
+@section('styles')
+    @vite('resources/css/sk/sk.css')
+@endsection
 
 @section('content')
     @include('usuarios.parciales.bodyListarUsuarios')

@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-    @include('documentos.parciales.bodyDetalleDocumentos')
+    @include('solicitudoc.parciales.bodyListarSolicitud')
 @endsection
 
 @section('scripts')
-        {{-- @vite('resources/js/documentos/altaDocumentos.js') --}}
+        @vite('resources/js/solicitudoc/listarSolicitud.js')
         <script src="{{ asset('/plugins/sweetalert.11.22/sweetalert2.all.min.js') }}"></script>
 @endsection
